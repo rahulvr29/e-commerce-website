@@ -131,8 +131,15 @@ const Header = () => {
                     <span onClick={logOut}>Logout</span>
                   ) : (
                     <div className="d-flex align-items-center justify-content-center flex-column SL">
-                      <motion.span whileTap={{scale:0.9}}><Link to="/signup">Signup</Link></motion.span>
-                      <motion.span whileTap={{scale:0.9}}><Link to="/login">Login</Link></motion.span>
+                      <motion.span whileTap={{ scale: 0.9 }}>
+                        <Link to="/signup">Signup</Link>
+                      </motion.span>
+                      <motion.span whileTap={{ scale: 0.9 }}>
+                        <Link to="/login">Login</Link>
+                      </motion.span>
+                      <motion.span whileTap={{ scale: 0.9 }}>
+                        <Link to="/dashboard">Dashboard</Link>
+                      </motion.span>
                     </div>
                   )}
                 </div>
