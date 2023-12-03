@@ -22,19 +22,19 @@ const Checkout = () => {
               <h6 className="mb-4 fw-bold">Billing Infomation</h6>
               <Form className='billing__form'>
                 <FormGroup className='form__group'>
-                  <input type="text" placeholder='Enter Your Name'/>
+                  <input type="text" placeholder='Enter Your Name' required/>
                 </FormGroup>
                 <FormGroup className='form__group'>
-                  <input type="email" placeholder='Enter Your Email'/>
+                  <input type="email" placeholder='Enter Your Email' required/>
                 </FormGroup>
                 <FormGroup className='form__group'>
-                  <input type="number" placeholder='Enter Your Number'/>
+                  <input type="number" placeholder='Enter Your Number' required/>
                 </FormGroup>
                 <FormGroup className='form__group'>
-                  <input type="text" placeholder='Enter Your Street Address'/>
+                  <input type="text" placeholder='Enter Your Street Address' required/>
                 </FormGroup>
                 <FormGroup className='form__group'>
-                  <input type="text" placeholder='Enter Your City Name'/>
+                  <input type="text" placeholder='Enter Your City Name' required/>
                 </FormGroup>
               </Form>
             </Col>
