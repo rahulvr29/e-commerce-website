@@ -10,7 +10,7 @@ import {
 } from "../pages";
 import { Routes, Route, Navigate } from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
-import { AddProducts, AllProducts, Dashboard } from "../admin";
+import { AddProducts, AllProducts, Dashboard, Order, User } from "../admin";
 
 const Routers = () => {
   return (
@@ -27,6 +27,8 @@ const Routers = () => {
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="dashboard/all-product" element={<AllProducts />} />
         <Route path="dashboard/add-product" element={<AddProducts />} />
+        <Route path="dashboard/users" element={<User />} />
+        <Route path="dashboard/orders" element={<Order />} />
       </Route>
     </Routes>
   );
