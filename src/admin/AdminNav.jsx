@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "reactstrap";
 import useAuth from "../custom/hooks/useAuth";
 import "../style/admin-nav.css";
-import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
+import { NavLink, Link } from "react-router-dom";
 
 const admin__nav = [
   {
@@ -24,11 +25,16 @@ const admin__nav = [
 ];
 
 const AdminNav = () => {
+  const handleToggle = () => {
+    setToggle(!toggle);
+  };
+  const [toggle, setToggle] = useState(false);
+
   const { currentUser } = useAuth();
   return (
     <>
       <header className="admin__header">
-        <div className="admin__nav-top">
+        <div className="admin__nav-top nav__icons">
           <Container>
             <div className="admin__nav-wrapper-top">
               <div className="logo">
@@ -47,8 +53,34 @@ const AdminNav = () => {
                 <span>
                   <i className="ri-settings-2-line"></i>
                 </span>
-                <img src={currentUser && currentUser.photoURL} alt="" />
+                <div className="profile" >
+                <img src={currentUser && currentUser.photoURL} className="profile" onClick={handleToggle} />
+                <div
+                  className={
+                    toggle ? "show__profile_Action" : "profile__action"
+                  } 
+                >
+                  {currentUser ? (
+                    <div className="d-flex align-items-center justify-content-center flex-column SL">
+                      <span >Logout</span>
+                    <motion.span whileTap={{ scale: 0.9 }}>
+                        <Link to="/home">Home</Link>
+                      </motion.span>
+                    </div>
+                  ) : (
+                    <div className="d-flex align-items-center justify-content-center flex-column SL">
+                      <motion.span whileTap={{ scale: 0.9 }}>
+                        <Link to="/signup">Signup</Link>
+                      </motion.span>
+                      <motion.span whileTap={{ scale: 0.9 }}>
+                        <Link to="/login">Login</Link>
+                      </motion.span>
+                    </div>
+                  )}
               </div>
+                </div>
+              </div>
+              
             </div>
           </Container>
         </div>
@@ -57,7 +89,8 @@ const AdminNav = () => {
       <section className="admin__menu p-0">
         <Container>
           <Row>
-            <div className="admin__navigation">
+            <Col lg='12' >
+            <div className="admin__navigation ">
               <ul className="admin__menu-list">
                 {admin__nav.map((e, i) => (
                   <li className="admin__menu-item" key={i}>
@@ -73,6 +106,7 @@ const AdminNav = () => {
                 ))}
               </ul>
             </div>
+            </Col>
           </Row>
         </Container>
       </section>

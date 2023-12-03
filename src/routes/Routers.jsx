@@ -15,7 +15,7 @@ import { AddProducts, AllProducts, Dashboard, Order, User } from "../admin";
 const Routers = () => {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="home" />} />
+      <Route path="/" element={<Navigate to="login" />} />
       <Route path="home" element={<Home />} />
       <Route path="cart" element={<Cart />} />
       <Route path="shop" element={<Shop />} />

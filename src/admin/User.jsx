@@ -4,6 +4,7 @@ import useGetData from '../custom/hooks/useGetData';
 import { deleteDoc, doc } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { toast } from "react-toastify";
+import '../style/user.css'
 
 const User = () => {
 
@@ -17,11 +18,11 @@ const User = () => {
     <section>
       <Container>
         <Row>
-          <Col lg='12'>
-              <h4 className="fw-bold">Users</h4>
+          <Col>
+              <h4 className="fw-bold user">Users</h4>
           </Col>
-          <Col lg='12'>
-            <table className="table">
+          <Col lg='12' >
+            <table className="table user-table w-75">
               <thead>
                 <tr>
                   <th>Image</th>
@@ -33,8 +34,8 @@ const User = () => {
               <tbody>
                 
                 {
-                  loading ? <h4 className='pt-5 fw-bold text-center'>Loading...</h4> : userData?.map(user => (
-                    <tr key={user.uid}>
+                  loading ? <h4 className='pt-5 fw-bold user-tb'>Loading...</h4> : userData?.map(user => (
+                    <tr key={user.uid} className='usertr'>
                       <td><img src={user.photoURL} /></td>
                       <td>{user.displayName}</td>
                       <td>{user.email}</td>

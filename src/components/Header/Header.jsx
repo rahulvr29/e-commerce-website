@@ -125,7 +125,7 @@ const Header = () => {
                 <div
                   className={
                     toggle ? "show__profile_Action" : "profile__action"
-                  }
+                  } 
                 >
                   {currentUser ? (
                     <div className="d-flex align-items-center justify-content-center flex-column SL">
