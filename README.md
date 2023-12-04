@@ -1,8 +1,6 @@
-# React + Vite
+# E-commerce Website Project using Vite + React 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Links
+- Github link - [click here](https://github.com/rahulvr29/e-commerce-website)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Live url link - [click here](https://e-commerce-website-react-js-pi.vercel.app/login)
