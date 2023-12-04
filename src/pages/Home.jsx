@@ -3,6 +3,7 @@ import Helmet from "../components/Helmet/Helmet";
 import { Container, Row, Col } from "reactstrap";
 import heroImg from "../assets/images/hero-img.png";
 import "../style/home.css";
+import product from '../assets/data/products'
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Services from "../services/Services";
@@ -23,19 +24,19 @@ const Home = () => {
   const year = new Date().getFullYear();
 
   useEffect(() => {
-    const filteredTrendingProducts = products.filter(
+    const filteredTrendingProducts = product.filter(
       (item) => item.category === "chair"
     );
-    const filteredBestSalesProducts = products.filter(
+    const filteredBestSalesProducts = product.filter(
       (item) => item.category === "sofa"
     );
-    const filteredMobileProducts = products.filter(
+    const filteredMobileProducts = product.filter(
       (item) => item.category === "mobile"
     );
-    const filteredWirelessProducts = products.filter(
+    const filteredWirelessProducts = product.filter(
       (item) => item.category === "wireless"
     );
-    const filteredPopularProducts = products.filter(
+    const filteredPopularProducts = product.filter(
       (item) => item.category === "watch"
     );
 

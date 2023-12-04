@@ -52,7 +52,7 @@ const Header = () => {
     signOut(auth)
       .then(() => {
         toast.success("Logged Out Successfully");
-        navigate("/home");
+        navigate("/login");
       })
       .catch((err) => {
         toast.error(err.message);

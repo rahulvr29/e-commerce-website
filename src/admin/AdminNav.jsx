@@ -3,7 +3,11 @@ import { Container, Row, Col } from "reactstrap";
 import useAuth from "../custom/hooks/useAuth";
 import "../style/admin-nav.css";
 import { motion } from "framer-motion";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase.config";
+import { toast } from "react-toastify";
+
 
 const admin__nav = [
   {
@@ -25,12 +29,26 @@ const admin__nav = [
 ];
 
 const AdminNav = () => {
+
+  const navigate = useNavigate();
+  
   const handleToggle = () => {
     setToggle(!toggle);
   };
   const [toggle, setToggle] = useState(false);
 
   const { currentUser } = useAuth();
+
+  const logOut = () => {
+    signOut(auth)
+      .then(() => {
+        toast.success("Logged Out Successfully");
+        navigate("/login");
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      });
+  };
   return (
     <>
       <header className="admin__header">
@@ -62,7 +80,7 @@ const AdminNav = () => {
                 >
                   {currentUser ? (
                     <div className="d-flex align-items-center justify-content-center flex-column SL">
-                      <span >Logout</span>
+                      <span onClick={logOut}>Logout</span>
                     <motion.span whileTap={{ scale: 0.9 }}>
                         <Link to="/home">Home</Link>
                       </motion.span>

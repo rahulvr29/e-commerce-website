@@ -12,6 +12,11 @@ const Checkout = () => {
   const totalAmount = useSelector(state=> state.cart.totalAmount);
 
 
+  const orderOK =()=>{
+    
+  }
+
+
   return (
     <Helmet title=' Checkout'>
       <CommonSection title='Checkout'/> 
